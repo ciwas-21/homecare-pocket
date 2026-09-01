@@ -1,249 +1,551 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>居服員數位口袋書</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>居服員數位口袋書</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+*{box-sizing:border-box}
 
-    body {
-      margin: 0;
-      font-family: "Microsoft JhengHei", Arial, sans-serif;
-      background: #f7f8f6;
-      color: #333;
-    }
+body{
+  margin:0;
+  font-family:"Microsoft JhengHei",Arial,sans-serif;
+  background:#f6f7f5;
+  color:#303633;
+}
 
-    .header {
-      background: #ffffff;
-      padding: 28px 20px 22px;
-      text-align: center;
-      border-bottom: 1px solid #e5e5e5;
-    }
+header{
+  background:white;
+  padding:24px 18px;
+  text-align:center;
+  border-bottom:1px solid #ddd;
+}
 
-    .header .icon {
-      font-size: 46px;
-      margin-bottom: 8px;
-    }
+header h1{
+  margin:5px 0;
+  font-size:28px;
+}
 
-    .header h1 {
-      margin: 0;
-      font-size: 28px;
-      color: #263238;
-    }
+header p{
+  margin:8px 0 0;
+  color:#666;
+  font-size:17px;
+}
 
-    .header p {
-      margin: 10px 0 0;
-      font-size: 18px;
-      color: #666;
-      line-height: 1.6;
-    }
+.container{
+  max-width:650px;
+  margin:auto;
+  padding:18px 15px 40px;
+}
 
-    .container {
-      max-width: 650px;
-      margin: auto;
-      padding: 22px 16px 40px;
-    }
+.page{display:none}
+.page.active{display:block}
 
-    .notice {
-      background: #fff8e8;
-      border: 1px solid #f2d79b;
-      border-radius: 15px;
-      padding: 16px;
-      margin-bottom: 22px;
-      font-size: 18px;
-      line-height: 1.6;
-    }
+.back{
+  border:0;
+  background:#e8ece9;
+  padding:12px 17px;
+  border-radius:12px;
+  font-size:18px;
+  margin-bottom:18px;
+  cursor:pointer;
+}
 
-    .title {
-      font-size: 21px;
-      font-weight: bold;
-      margin: 12px 4px 15px;
-    }
+.title{
+  font-size:24px;
+  font-weight:bold;
+  margin:8px 3px 18px;
+}
 
-    .card {
-      display: block;
-      text-decoration: none;
-      background: white;
-      border-radius: 18px;
-      padding: 21px 18px;
-      margin-bottom: 15px;
-      color: #333;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      border: 1px solid #eeeeee;
-    }
+.subtitle{
+  color:#666;
+  font-size:17px;
+  margin:-8px 3px 18px;
+  line-height:1.6;
+}
 
-    .card-top {
-      display: flex;
-      align-items: center;
-    }
+.card{
+  background:white;
+  border:1px solid #e3e3e3;
+  border-radius:18px;
+  padding:19px;
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  cursor:pointer;
+  box-shadow:0 2px 7px rgba(0,0,0,.05);
+}
 
-    .card-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 31px;
-      margin-right: 15px;
-      flex-shrink: 0;
-    }
+.icon{
+  width:58px;
+  height:58px;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  margin-right:15px;
+  flex-shrink:0;
+}
 
-    .red { background: #ffe8e8; }
-    .blue { background: #e9f3ff; }
-    .orange { background: #fff0df; }
-    .green { background: #e8f6ed; }
-    .gray { background: #eeeeee; }
+.red{background:#ffe7e7}
+.blue{background:#e8f3ff}
+.orange{background:#fff0df}
+.green{background:#e7f6eb}
+.purple{background:#f1eaff}
+.gray{background:#eeeeee}
 
-    .card h2 {
-      margin: 0 0 5px;
-      font-size: 22px;
-    }
+.text h2{
+  margin:0 0 5px;
+  font-size:21px;
+}
 
-    .card p {
-      margin: 0;
-      color: #666;
-      font-size: 17px;
-      line-height: 1.5;
-    }
+.text p{
+  margin:0;
+  color:#666;
+  font-size:16px;
+  line-height:1.5;
+}
 
-    .arrow {
-      margin-left: auto;
-      font-size: 27px;
-      color: #888;
-      padding-left: 10px;
-    }
+.arrow{
+  margin-left:auto;
+  font-size:28px;
+  color:#888;
+}
 
-    .emergency {
-      background: #b72d2d;
-      color: white;
-      border-radius: 18px;
-      padding: 20px;
-      margin-top: 25px;
-    }
+.guide{
+  background:white;
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:15px;
+  border:1px solid #e2e2e2;
+}
 
-    .emergency h2 {
-      margin: 0 0 8px;
-      font-size: 22px;
-    }
+.guide h2{
+  margin-top:0;
+  font-size:21px;
+}
 
-    .emergency p {
-      margin: 0;
-      font-size: 17px;
-      line-height: 1.6;
-    }
+.guide p, .guide li{
+  font-size:18px;
+  line-height:1.8;
+}
 
-    .footer {
-      text-align: center;
-      color: #888;
-      font-size: 15px;
-      margin-top: 30px;
-      line-height: 1.6;
-    }
+.guide ol{
+  padding-left:26px;
+}
 
-    @media (max-width: 480px) {
-      .header h1 {
-        font-size: 25px;
-      }
+.slogan{
+  background:#fff4d9;
+  border-left:6px solid #e3a829;
+  padding:17px;
+  border-radius:12px;
+  font-size:19px;
+  line-height:1.6;
+  margin-bottom:16px;
+}
 
-      .card h2 {
-        font-size: 21px;
-      }
-    }
-  </style>
+.warning{
+  background:#ffe7e7;
+  border:1px solid #efb1b1;
+  padding:17px;
+  border-radius:13px;
+  font-size:18px;
+  line-height:1.7;
+}
+
+.call119{
+  display:block;
+  text-decoration:none;
+  background:#b92d2d;
+  color:white;
+  padding:17px;
+  text-align:center;
+  border-radius:14px;
+  font-size:22px;
+  font-weight:bold;
+  margin-top:16px;
+}
+
+.homebtn{
+  width:100%;
+  border:0;
+  background:#40564b;
+  color:white;
+  padding:16px;
+  border-radius:14px;
+  font-size:19px;
+  margin-top:20px;
+  cursor:pointer;
+}
+
+.notice{
+  background:#fff8e7;
+  padding:16px;
+  border-radius:14px;
+  margin-bottom:20px;
+  font-size:17px;
+  line-height:1.6;
+}
+
+footer{
+  text-align:center;
+  color:#888;
+  padding:25px 10px;
+  font-size:14px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="header">
-    <div class="icon">🏠</div>
-    <h1>居服員數位口袋書</h1>
-    <p>服務中遇到狀況不用慌<br>找到問題，照著步驟處理</p>
-  </div>
+<header>
+  <div style="font-size:42px">🏠</div>
+  <h1>居服員數位口袋書</h1>
+  <p>遇到狀況不用慌，點選問題快速查看</p>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <div class="notice">
-      💡 <strong>不知道要怎麼辦？</strong><br>
-      先確認自己與個案的安全，再找到下面最接近的狀況。
-    </div>
+<!-- 首頁 -->
+<section id="home" class="page active">
 
-    <div class="title">請問現在遇到什麼狀況？</div>
+<div class="notice">
+💡 <b>先看現場！</b><br>
+遇到事情先確認「自己安全、個案安全」，再選擇下面最接近的狀況。
+</div>
 
-    <a class="card" href="#emergency">
-      <div class="card-top">
-        <div class="card-icon red">🆘</div>
-        <div>
-          <h2>緊急狀況</h2>
-          <p>跌倒、昏倒、呼吸困難、大量出血等</p>
-        </div>
-        <div class="arrow">›</div>
-      </div>
-    </a>
+<div class="title">現在遇到什麼狀況？</div>
 
-    <a class="card" href="#client">
-      <div class="card-top">
-        <div class="card-icon blue">👴</div>
-        <div>
-          <h2>個案身體不舒服</h2>
-          <p>發燒、頭暈、嘔吐、身體異常等</p>
-        </div>
-        <div class="arrow">›</div>
-      </div>
-    </a>
+<div class="card" onclick="showPage('emergency')">
+<div class="icon red">🆘</div>
+<div class="text">
+<h2>緊急狀況</h2>
+<p>跌倒、昏倒、呼吸困難、大量出血</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-    <a class="card" href="#worker">
-      <div class="card-top">
-        <div class="card-icon orange">🛡️</div>
-        <div>
-          <h2>我遇到危險</h2>
-          <p>被罵、被打、性騷擾、環境不安全等</p>
-        </div>
-        <div class="arrow">›</div>
-      </div>
-    </a>
+<div class="card" onclick="showPage('body')">
+<div class="icon blue">👴</div>
+<div class="text">
+<h2>個案身體不舒服</h2>
+<p>發燒、嘔吐、抽搐、身體異常</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-    <a class="card" href="#service">
-      <div class="card-top">
-        <div class="card-icon green">📋</div>
-        <div>
-          <h2>服務時遇到問題</h2>
-          <p>拒絕服務、家屬要求額外工作等</p>
-        </div>
-        <div class="arrow">›</div>
-      </div>
-    </a>
+<div class="card" onclick="showPage('worker')">
+<div class="icon orange">🛡️</div>
+<div class="text">
+<h2>我遇到危險</h2>
+<p>被打、被罵、性騷擾、環境危險</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-    <a class="card" href="#contact">
-      <div class="card-top">
-        <div class="card-icon gray">☎️</div>
-        <div>
-          <h2>我要聯絡誰？</h2>
-          <p>督導、家屬、119及其他通報方式</p>
-        </div>
-        <div class="arrow">›</div>
-      </div>
-    </a>
+<div class="card" onclick="showPage('service')">
+<div class="icon green">📋</div>
+<div class="text">
+<h2>服務時遇到問題</h2>
+<p>拒絕服務、家屬要求額外工作</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-    <div class="emergency">
-      <h2>🚑 有立即生命危險</h2>
-      <p>
-        不要只傳訊息等待回覆。<br>
-        先確保現場安全，必要時立即撥打 <strong>119</strong>，
-        並依單位規定通知督導及家屬。
-      </p>
-    </div>
+<div class="card" onclick="showPage('contact')">
+<div class="icon gray">☎️</div>
+<div class="text">
+<h2>我要聯絡誰？</h2>
+<p>119、督導、家屬與通報順序</p>
+</div>
+<div class="arrow">›</div>
+</div>
 
-    <div class="footer">
-      居服員外勤數位口袋書<br>
-      本網站內容供服務現場快速查閱使用
-    </div>
+</section>
 
-  </div>
 
-</body>
-</html>
+<!-- 緊急狀況 -->
+<section id="emergency" class="page">
+
+<button class="back" onclick="showPage('home')">← 回首頁</button>
+
+<div class="title">🆘 緊急狀況</div>
+<div class="subtitle">選擇現在最接近的情況</div>
+
+<div class="card" onclick="showPage('fall')">
+<div class="icon red">🤕</div>
+<div class="text"><h2>跌倒</h2><p>跌在地上、疑似受傷</p></div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card" onclick="showPage('unconscious')">
+<div class="icon red">😵</div>
+<div class="text"><h2>昏倒／叫不醒</h2><p>突然失去意識、沒有反應</p></div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card" onclick="showPage('breathing')">
+<div class="icon red">🫁</div>
+<div class="text"><h2>呼吸困難</h2><p>喘不過氣、嘴唇發紫</p></div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card" onclick="showPage('bleeding')">
+<div class="icon red">🩸</div>
+<div class="text"><h2>大量出血</h2><p>傷口持續流血、止不住</p></div>
+<div class="arrow">›</div>
+</div>
+
+</section>
+
+
+<!-- 身體不舒服 -->
+<section id="body" class="page">
+
+<button class="back" onclick="showPage('home')">← 回首頁</button>
+
+<div class="title">👴 個案身體不舒服</div>
+
+<div class="card" onclick="showPage('fever')">
+<div class="icon blue">🌡️</div>
+<div class="text"><h2>發燒</h2><p>體溫升高、發冷、出汗</p></div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card" onclick="showPage('vomit')">
+<div class="icon blue">🤢</div>
+<div class="text"><h2>嘔吐</h2><p>突然吐、持續噁心</p></div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card" onclick="showPage('seizure')">
+<div class="icon blue">⚡</div>
+<div class="text"><h2>抽搐</h2><p>身體突然僵硬、抖動</p></div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card" onclick="showPage('rash')">
+<div class="icon blue">🦠</div>
+<div class="text"><h2>水泡／皮疹</h2><p>突然出現紅疹、水泡或疑似感染</p></div>
+<div class="arrow">›</div>
+</div>
+
+</section>
+
+
+<!-- 居服員安全 -->
+<section id="worker" class="page">
+
+<button class="back" onclick="showPage('home')">← 回首頁</button>
+
+<div class="title">🛡️ 我遇到危險</div>
+
+<div class="card" onclick="showPage('violence')">
+<div class="icon orange">✋</div>
+<div class="text"><h2>被打／被威脅</h2><p>個案或家屬有攻擊行為</p></div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card" onclick="showPage('verbal')">
+<div class="icon orange">💢</div>
+<div class="text"><h2>被辱罵</h2><p>持續叫罵、羞辱或威脅</p></div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card" onclick="showPage('harassment')">
+<div class="icon orange">🚫</div>
+<div class="text"><h2>性騷擾</h2><p>不當碰觸、言語或要求</p></div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card" onclick="showPage('unsafe')">
+<div class="icon orange">⚠️</div>
+<div class="text"><h2>環境不安全</h2><p>醉酒、危險物品、寵物攻擊等</p></div>
+<div class="arrow">›</div>
+</div>
+
+</section>
+
+
+<!-- 服務問題 -->
+<section id="service" class="page">
+
+<button class="back" onclick="showPage('home')">← 回首頁</button>
+
+<div class="title">📋 服務時遇到問題</div>
+
+<div class="card" onclick="showPage('refuse')">
+<div class="icon green">🙅</div>
+<div class="text"><h2>個案拒絕服務</h2><p>不洗澡、不吃飯、不願配合</p></div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card" onclick="showPage('extra')">
+<div class="icon green">🧹</div>
+<div class="text"><h2>要求做服務外的事情</h2><p>家屬臨時要求額外工作</p></div>
+<div class="arrow">›</div>
+</div>
+
+</section>
+
+
+<!-- 聯絡 -->
+<section id="contact" class="page">
+
+<button class="back" onclick="showPage('home')">← 回首頁</button>
+
+<div class="title">☎️ 我要聯絡誰？</div>
+
+<div class="guide">
+<h2>🚑 有生命危險</h2>
+<p><b>先撥 119</b>，再依單位規定通知督導與家屬。</p>
+<a class="call119" href="tel:119">☎️ 撥打 119</a>
+</div>
+
+<div class="guide">
+<h2>👩‍💼 非立即生命危險</h2>
+<p>先確保現場安全，記錄發生的時間與狀況，再聯絡督導依指示處理。</p>
+</div>
+
+<button class="homebtn" onclick="showPage('home')">🏠 回首頁</button>
+
+</section>
+
+
+<!-- 跌倒 -->
+<section id="fall" class="page detail">
+
+<button class="back" onclick="showPage('emergency')">← 回上一頁</button>
+
+<div class="title">🤕 個案跌倒</div>
+
+<div class="slogan">
+<b>口訣：</b>先別扶、看反應、看傷勢、再通報
+</div>
+
+<div class="guide">
+<h2>簡單處理步驟</h2>
+<ol>
+<li><b>先不要急著扶起來。</b></li>
+<li>確認個案是否清醒、能不能正常說話。</li>
+<li>觀察頭部、四肢是否有疼痛、出血或明顯變形。</li>
+<li>若沒有明顯傷勢，依單位照護流程協助後續處理。</li>
+<li>記錄跌倒時間、地點與當時情況，通知督導。</li>
+</ol>
+</div>
+
+<div class="warning">
+🚨 <b>立即求助：</b><br>
+叫不醒、頭部重擊、大量出血、呼吸異常、劇烈疼痛或疑似骨折時，應立即尋求緊急醫療協助。
+</div>
+
+</section>
+
+
+<!-- 昏倒 -->
+<section id="unconscious" class="page detail">
+
+<button class="back" onclick="showPage('emergency')">← 回上一頁</button>
+
+<div class="title">😵 昏倒／叫不醒</div>
+
+<div class="slogan"><b>口訣：</b>叫、看、求救</div>
+
+<div class="guide">
+<ol>
+<li>呼叫個案並確認是否有反應。</li>
+<li>觀察是否有正常呼吸。</li>
+<li>立即尋求協助並依緊急救護指示處理。</li>
+<li>通知督導及家屬。</li>
+</ol>
+
+<a class="call119" href="tel:119">☎️ 撥打 119</a>
+</div>
+
+</section>
+
+
+<!-- 呼吸困難 -->
+<section id="breathing" class="page detail">
+
+<button class="back" onclick="showPage('emergency')">← 回上一頁</button>
+
+<div class="title">🫁 呼吸困難</div>
+
+<div class="slogan"><b>口訣：</b>坐好、鬆衣、看呼吸、快求救</div>
+
+<div class="guide">
+<ol>
+<li>停止活動，讓個案保持較舒服且利於呼吸的姿勢。</li>
+<li>鬆開過緊的衣物。</li>
+<li>觀察意識、呼吸與嘴唇顏色。</li>
+<li>依個案既有照護計畫及單位規定處理。</li>
+</ol>
+</div>
+
+<div class="warning">
+🚨 若嚴重喘不過氣、意識改變、嘴唇發紫或情況快速惡化，立即求助。
+</div>
+
+<a class="call119" href="tel:119">☎️ 撥打 119</a>
+
+</section>
+
+
+<!-- 出血 -->
+<section id="bleeding" class="page detail">
+
+<button class="back" onclick="showPage('emergency')">← 回上一頁</button>
+
+<div class="title">🩸 大量出血</div>
+
+<div class="slogan"><b>口訣：</b>戴手套、直接壓、快求救</div>
+
+<div class="guide">
+<ol>
+<li>先做好自身防護，避免直接接觸血液。</li>
+<li>使用乾淨敷料直接加壓傷口。</li>
+<li>持續觀察個案意識與狀況。</li>
+<li>大量出血或無法控制時立即求助。</li>
+</ol>
+</div>
+
+<a class="call119" href="tel:119">☎️ 撥打 119</a>
+
+</section>
+
+
+<!-- 發燒 -->
+<section id="fever" class="page detail">
+
+<button class="back" onclick="showPage('body')">← 回上一頁</button>
+
+<div class="title">🌡️ 發燒</div>
+
+<div class="slogan">
+<b>口訣：</b>量體溫、補水分、擦乾換衣、持續觀察
+</div>
+
+<div class="guide">
+<ol>
+<li>量體溫並記錄時間與數值。</li>
+<li>讓個案休息，依照照護計畫適量補充水分。</li>
+<li>若出汗，協助擦乾並換上乾爽衣物。</li>
+<li>持續觀察精神、呼吸與其他症狀。</li>
+<li>通知督導及家屬，依單位流程處理。</li>
+</ol>
+</div>
+
+<div class="warning">
+🚨 若出現呼吸困難、意識異常、抽搐或其他明顯危急症狀，立即尋求緊急醫療協助。
+</div>
+
+</section>
+
+
+<!-- 嘔吐 -->
+<section id="vomit" class="page detail">
+
+<button class="back" onclick="showPage('

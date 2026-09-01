@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>居服員數位口袋書</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", Arial, sans-serif;
+      background: #f7f8f6;
+      color: #333;
+    }
+
+    .header {
+      background: #ffffff;
+      padding: 28px 20px 22px;
+      text-align: center;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .header .icon {
+      font-size: 46px;
+      margin-bottom: 8px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #263238;
+    }
+
+    .header p {
+      margin: 10px 0 0;
+      font-size: 18px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: auto;
+      padding: 22px 16px 40px;
+    }
+
+    .notice {
+      background: #fff8e8;
+      border: 1px solid #f2d79b;
+      border-radius: 15px;
+      padding: 16px;
+      margin-bottom: 22px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .title {
+      font-size: 21px;
+      font-weight: bold;
+      margin: 12px 4px 15px;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      background: white;
+      border-radius: 18px;
+      padding: 21px 18px;
+      margin-bottom: 15px;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      border: 1px solid #eeeeee;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+    }
+
+    .card-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 31px;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .red { background: #ffe8e8; }
+    .blue { background: #e9f3ff; }
+    .orange { background: #fff0df; }
+    .green { background: #e8f6ed; }
+    .gray { background: #eeeeee; }
+
+    .card h2 {
+      margin: 0 0 5px;
+      font-size: 22px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #666;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .arrow {
+      margin-left: auto;
+      font-size: 27px;
+      color: #888;
+      padding-left: 10px;
+    }
+
+    .emergency {
+      background: #b72d2d;
+      color: white;
+      border-radius: 18px;
+      padding: 20px;
+      margin-top: 25px;
+    }
+
+    .emergency h2 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .emergency p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      text-align: center;
+      color: #888;
+      font-size: 15px;
+      margin-top: 30px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      .header h1 {
+        font-size: 25px;
+      }
+
+      .card h2 {
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="icon">🏠</div>
+    <h1>居服員數位口袋書</h1>
+    <p>服務中遇到狀況不用慌<br>找到問題，照著步驟處理</p>
+  </div>
+
+  <div class="container">
+
+    <div class="notice">
+      💡 <strong>不知道要怎麼辦？</strong><br>
+      先確認自己與個案的安全，再找到下面最接近的狀況。
+    </div>
+
+    <div class="title">請問現在遇到什麼狀況？</div>
+
+    <a class="card" href="#emergency">
+      <div class="card-top">
+        <div class="card-icon red">🆘</div>
+        <div>
+          <h2>緊急狀況</h2>
+          <p>跌倒、昏倒、呼吸困難、大量出血等</p>
+        </div>
+        <div class="arrow">›</div>
+      </div>
+    </a>
+
+    <a class="card" href="#client">
+      <div class="card-top">
+        <div class="card-icon blue">👴</div>
+        <div>
+          <h2>個案身體不舒服</h2>
+          <p>發燒、頭暈、嘔吐、身體異常等</p>
+        </div>
+        <div class="arrow">›</div>
+      </div>
+    </a>
+
+    <a class="card" href="#worker">
+      <div class="card-top">
+        <div class="card-icon orange">🛡️</div>
+        <div>
+          <h2>我遇到危險</h2>
+          <p>被罵、被打、性騷擾、環境不安全等</p>
+        </div>
+        <div class="arrow">›</div>
+      </div>
+    </a>
+
+    <a class="card" href="#service">
+      <div class="card-top">
+        <div class="card-icon green">📋</div>
+        <div>
+          <h2>服務時遇到問題</h2>
+          <p>拒絕服務、家屬要求額外工作等</p>
+        </div>
+        <div class="arrow">›</div>
+      </div>
+    </a>
+
+    <a class="card" href="#contact">
+      <div class="card-top">
+        <div class="card-icon gray">☎️</div>
+        <div>
+          <h2>我要聯絡誰？</h2>
+          <p>督導、家屬、119及其他通報方式</p>
+        </div>
+        <div class="arrow">›</div>
+      </div>
+    </a>
+
+    <div class="emergency">
+      <h2>🚑 有立即生命危險</h2>
+      <p>
+        不要只傳訊息等待回覆。<br>
+        先確保現場安全，必要時立即撥打 <strong>119</strong>，
+        並依單位規定通知督導及家屬。
+      </p>
+    </div>
+
+    <div class="footer">
+      居服員外勤數位口袋書<br>
+      本網站內容供服務現場快速查閱使用
+    </div>
+
+  </div>
+
+</body>
+</html>

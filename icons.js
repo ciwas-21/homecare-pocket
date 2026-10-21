@@ -1,0 +1,38 @@
+// 深灰描邊、受恩綠黃填色的向量插畫。
+const careIllustrations={
+heart:'<path fill="#d8c821" d="M32 51 11 30C-2 12 20 4 32 20 44 4 66 12 53 30Z"/><path d="M12 32h10l5-10 7 20 6-10h12"/>',
+care:'<path fill="#d8c821" d="M32 29 21 19c-8-10 5-17 11-8 6-9 19-2 11 8Z"/><path fill="#fffef1" d="M25 56H14L8 33c-2-8 5-9 7-3l3 9 7 5-7-8c-4-5 1-9 5-5l9 10 9-10c4-4 9 0 5 5l-7 8 7-5 3-9c2-6 9-5 7 3l-6 23H39V46H25Z"/>',
+door:'<path fill="#fffef1" d="M12 55V8h39v47Z"/><path fill="#1a8648" d="m18 12 26 5v38H18Z"/><circle fill="#d8c821" cx="37" cy="34" r="3"/><path d="M7 55h50"/>',
+shield:'<path fill="#1a8648" d="M32 6 53 15v18c0 13-13 22-21 25-8-3-21-12-21-25V15Z"/><path fill="#d8c821" d="m20 31 8 8 17-19 5 5-22 22-13-12Z"/>',
+scooter:'<circle fill="#fffef1" cx="15" cy="49" r="9"/><circle fill="#fffef1" cx="50" cy="49" r="9"/><path fill="#1a8648" d="M14 40h17l8-23h9l5 24H34v8H14Z"/><path fill="#d8c821" d="M9 32h20v7H9Z"/><path d="M37 16h12l4-6M43 25h10"/>',
+home:'<path fill="#fffef1" d="M13 29v27h39V29"/><path fill="#d8c821" d="M6 30 32 7l26 23-5 5-21-18-21 18Z"/><path fill="#1a8648" d="M25 36h14v20H25Z"/><path d="M19 31h5M41 31h5"/>',
+head:'<path fill="#fffef1" d="M21 56V44C-1 26 16 4 35 9c19 3 17 20 13 25l7 6h-8v9H34v7Z"/><path fill="#d8c821" d="m26 12-8 14h10l-4 14 17-21H30l5-7Z"/>',
+stomach:'<path fill="#1a8648" d="M30 8v16c-8-4-20-1-22 10-3 16 13 25 29 20 12-4 18-16 14-29-3-9-14-7-14-17Z"/><path fill="#d8c821" d="m26 29-6 10h9l-3 9 14-14h-9l3-5Z"/>',
+seizure:'<circle fill="#d8c821" cx="32" cy="14" r="8"/><path fill="#1a8648" d="M25 25h14l4 22H22Z"/><path d="m22 29-10 9 8 6m22-15 10 9-8 6M26 47l-5 11m17-11 5 11M7 13l-4 8 6 5M57 13l4 8-6 5"/>',
+speech:'<path fill="#fffef1" d="M6 10h51v33H31L19 55V43H6Z"/><path fill="#1a8648" d="M13 20h23v5H13Zm0 12h16v5H13Z"/><path fill="#d8c821" d="m43 15-8 14h9l-4 10 15-18h-9l4-6Z"/>',
+lungs:'<path d="M32 7v23m0-10-9 10m9-10 9 10"/><path fill="#1a8648" d="M24 18c-9 4-18 21-17 32 1 7 18 5 20-4V28Z"/><path fill="#d8c821" d="M40 18c9 4 18 21 17 32-1 7-18 5-20-4V28Z"/><path d="m18 33-4 9m32-9 4 9"/>',
+fall:'<circle fill="#d8c821" cx="42" cy="13" r="7"/><path d="m36 24-13 9-10-8m12 8 13 7 13-10m-15 9-13 12-13-1m27-9 8 10 12 3M5 59h54"/><path fill="#1a8648" d="m30 23 13 8-6 12-15-9Z"/>',
+choke:'<circle fill="#fffef1" cx="32" cy="14" r="9"/><path fill="#1a8648" d="M21 31h22v25H21Z"/><path d="m12 39 12-14 8 6m20 8L40 25l-8 6"/><path fill="#d8c821" d="m31 23-5 9h7l-3 8 12-12h-8l3-5Z"/>',
+blood:'<path fill="#d8c821" d="M32 7C27 21 13 31 13 42a19 19 0 0 0 38 0C51 31 37 21 32 7Z"/><path fill="#1a8648" d="M29 31h7v7h7v7h-7v7h-7v-7h-7v-7h7Z"/>',
+heat:'<path fill="#d8c821" d="M34 6c7 15-4 15 5 24l7-12c20 28 6 41-14 41S2 39 19 21c-1 13 5 13 7 10 4-5-4-12 8-25Z"/><path fill="#1a8648" d="M31 35c9 9 14 17 1 23-13-5-7-15-1-23Z"/>',
+pill:'<path fill="#fffef1" d="m12 35 23-23c15-15 32 2 17 17L29 52C14 67-3 50 12 35Z"/><path fill="#1a8648" d="m12 35 11-11 17 17-11 11C14 67-3 50 12 35Z"/><path d="m24 24 17 17"/><path fill="#d8c821" d="M45 44h15v12H45Z"/><path d="M52 44v12"/>',
+tube:'<path fill="#fffef1" d="M9 7h21v24H9Z"/><path fill="#d8c821" d="M9 21h21v10H9Z"/><path d="M19 31v7c0 11 27-3 27 10 0 9-12 10-12 2V19"/><path fill="#1a8648" d="M30 11h9v12h-9Z"/><path d="M14 13h11"/>',
+lock:'<path fill="#fffef1" d="M19 28V17a13 13 0 0 1 26 0v11h-7V17a6 6 0 0 0-12 0v11Z"/><rect fill="#d8c821" x="12" y="27" width="40" height="31" rx="5"/><circle fill="#1a8648" cx="32" cy="39" r="4"/><path d="M32 43v6"/>',
+hand:'<path fill="#fffef1" d="M19 56 7 38c-4-7 2-11 7-6l6 7V15c0-7 8-7 8 0v16V8c0-6 8-6 8 0v23V12c0-6 8-6 8 0v21V20c0-6 8-6 8 0v22l-7 14Z"/><path fill="#d8c821" d="M24 39h17v12H24Z"/>',
+money:'<rect fill="#1a8648" x="5" y="14" width="54" height="35" rx="3"/><circle fill="#d8c821" cx="32" cy="32" r="12"/><path d="M36 26h-7v6h6v6h-8m5-15v18"/><path stroke="#fffef1" d="M12 22h5m30 19h5"/>',
+wheelchair:'<circle fill="#d8c821" cx="32" cy="10" r="7"/><path fill="#1a8648" d="M28 22h10v17h13l7 15-7 3-6-11H28Z"/><circle fill="#fffef1" cx="24" cy="45" r="14"/><path d="M25 31v14h13m-14-8v16m-8-8h16"/>',
+pan:'<path fill="#1a8648" d="M6 33h37v9c0 15-37 15-37 0Z"/><path fill="#d8c821" d="M43 35h16v7H43Z"/><path d="M12 29h25"/><path fill="#d8c821" d="M22 6c12 12-5 11 5 22-15 0-19-9-5-22Z"/>',
+plug:'<path fill="#d8c821" d="M16 22h31v13c0 12-31 12-31 0Z"/><path d="M23 9v13m16-13v13M31 44v7c0 9 23 9 23-3"/><path fill="#1a8648" d="m30 24-6 10h7l-3 9 12-13h-7l3-6Z"/>',
+quake:'<path fill="#fffef1" d="M13 29v23h39V29"/><path fill="#d8c821" d="M5 30 32 8l27 22-7 4-20-17-20 17Z"/><path d="m33 24-7 12 9 4-8 12M4 57l14-3 12 6 12-5 18 4"/>',
+gas:'<rect fill="#1a8648" x="18" y="19" width="28" height="39" rx="8"/><path fill="#d8c821" d="M23 10h18v9H23Zm3 23h12v12H26Z"/><path d="M29 6h8m17 16c9-7-4-9 2-16m-45 18c-9-7 4-9-2-16"/>',
+phone:'<path fill="#1a8648" d="m9 9 11-3 9 14-8 7c5 8 9 12 17 16l7-8 14 9-3 11C29 63 1 34 9 9Z"/><path stroke="#d8c821" d="M39 9c10 0 17 7 17 17M39 17c5 0 9 4 9 9"/>',
+water:'<path fill="#1a8648" d="M8 12h25v9H8Zm25 0h16v9H33Z"/><path d="M8 16V6m34 15v6m8-6v6"/><path fill="#d8c821" d="M43 32c-5 7-12 12-12 19a12 12 0 0 0 24 0c0-7-7-12-12-19Z"/>',
+notes:'<rect fill="#fffef1" x="10" y="9" width="36" height="49" rx="3"/><path fill="#d8c821" d="M20 5h16v10H20Z"/><path d="M18 25h18m-18 9h13m-13 9h12"/><path fill="#1a8648" d="m37 47 15-23 7 5-15 23-10 6Z"/>',
+eye:'<path fill="#fffef1" d="M5 32c15-24 39-24 54 0-15 24-39 24-54 0Z"/><circle fill="#1a8648" cx="32" cy="32" r="11"/><circle fill="#d8c821" cx="32" cy="32" r="4"/>',
+megaphone:'<path fill="#fffef1" d="m15 25 30-13v37L15 36Z"/><path fill="#d8c821" d="M7 25h10v12H7Zm36-16h6v42h-6Z"/><path fill="#1a8648" d="m15 36 8 2 5 17h-8Z"/><path d="m54 17 5-4m-5 18h6m-6 13 5 4"/>',
+bed:'<path fill="#1a8648" d="M7 28h50v22H7Z"/><path fill="#fffef1" d="M9 21h16v14H9Z"/><path fill="#d8c821" d="M26 26h29v9H26Z"/><path d="M6 12v45m52-20v20M7 49h50"/>',
+window:'<rect fill="#fffef1" x="9" y="8" width="46" height="48" rx="2"/><path fill="#d8c821" d="M15 14h14v16H15Z"/><path fill="#1a8648" d="M35 14h14v16H35Zm-20 22h14v14H15Z"/><path d="M32 9v46M9 33h46m30 8h7"/>',
+bandage:'<path fill="#d8c821" d="m8 24 16-16c4-4 8-4 12 0l20 20c4 4 4 8 0 12L40 56c-4 4-8 4-12 0L8 36c-4-4-4-8 0-12Z"/><path fill="#1a8648" d="m19 25 12-12 20 20-12 12Z"/><path d="m15 30 2 2m3 4 2 2m20 8 2 2m3-9 2 2"/>'
+};
+const careIconKeys={'🫀':'heart','🩹':'bandage','🚪':'door','🛡️':'shield','🛵':'scooter','🏠':'home','😵':'head','💔':'heart','🤢':'stomach','〰️':'seizure','🗣️':'speech','🤕':'head','🫁':'lungs','🚶':'fall','😮':'choke','🩸':'blood','♨️':'heat','💊':'pill','🧷':'tube','🔒':'lock','✋':'hand','💰':'money','🦽':'wheelchair','🔥':'heat','🍳':'pan','🔌':'plug','🫨':'quake','⚠️':'gas','📞':'phone','🚿':'water','🪟':'window','📝':'notes','👀':'eye','📣':'megaphone','🛏️':'bed','🤝':'care'};
+function illustratedIcon(symbol){const key=careIconKeys[symbol]||'care';return `<svg class="care-illustration" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#454441" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${careIllustrations[key]}</svg>`}
